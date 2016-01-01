@@ -1,5 +1,6 @@
 package com.malexj.repository.impl;
 
+import com.malexj.entity.Admin;
 import com.malexj.entity.Content;
 import com.malexj.entity.Section;
 import com.malexj.repository.PostgresRepository;
@@ -66,6 +67,18 @@ public class PostgresRepositoryImpl implements PostgresRepository {
             Content content = new Content();
             content.setName(rs.getString("name"));
             return content;
+        });
+    }
+
+    @Override
+    public List<Admin> getListAdmin() {
+        return this.jdbcTemplate.query("SELECT * FROM admin ORDER BY id", (rs, rowNum) -> {
+            Admin admin = new Admin();
+            admin.setId(rs.getInt("id"));
+            admin.setName(rs.getString("name"));
+            admin.setPath(rs.getString("path"));
+            admin.setIcon(rs.getString("icon"));
+            return admin;
         });
     }
 

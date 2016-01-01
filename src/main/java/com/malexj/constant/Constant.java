@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 public class Constant {
     public final String PAGE = "index";
     public final String CURRENT_PAGE = "currentPage";
+    public final String ADMIN_PAGE = "adminPage";
     public final String EXCEPTION_CONNECT = "exception";
 
 }
