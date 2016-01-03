@@ -1,6 +1,6 @@
 package com.malexj.repository;
 
-import com.malexj.entity.Admin;
+import com.malexj.entity.AdminTable;
 import com.malexj.entity.Content;
 import com.malexj.entity.Section;
 
@@ -16,5 +16,7 @@ public interface PostgresRepository {
 
     public List<Content> getListContentFromContentSection();
 
-    List<Admin> getListAdmin();
+    List<AdminTable> getListAdmin();
+
+    List<String> getTablesNames();
 }

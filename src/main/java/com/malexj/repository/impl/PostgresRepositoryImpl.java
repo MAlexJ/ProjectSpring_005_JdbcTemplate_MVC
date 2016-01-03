@@ -1,6 +1,6 @@
 package com.malexj.repository.impl;
 
-import com.malexj.entity.Admin;
+import com.malexj.entity.AdminTable;
 import com.malexj.entity.Content;
 import com.malexj.entity.Section;
 import com.malexj.repository.PostgresRepository;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import javax.sql.DataSource;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.*;
 
 @Repository
 public class PostgresRepositoryImpl implements PostgresRepository {
@@ -71,9 +71,9 @@ public class PostgresRepositoryImpl implements PostgresRepository {
     }
 
     @Override
-    public List<Admin> getListAdmin() {
+    public List<AdminTable> getListAdmin() {
         return this.jdbcTemplate.query("SELECT * FROM admin ORDER BY id", (rs, rowNum) -> {
-            Admin admin = new Admin();
+            AdminTable admin = new AdminTable();
             admin.setId(rs.getInt("id"));
             admin.setName(rs.getString("name"));
             admin.setPath(rs.getString("path"));
@@ -82,4 +82,10 @@ public class PostgresRepositoryImpl implements PostgresRepository {
         });
     }
 
+    @Override
+    public List<String> getTablesNames() {
+        return this.jdbcTemplate.query("SELECT table_name FROM information_schema.tables WHERE table_schema='public' AND table_type='BASE TABLE'", (rs, rowNum) -> {
+            return rs.getString("table_name");
+        });
+    }
 }

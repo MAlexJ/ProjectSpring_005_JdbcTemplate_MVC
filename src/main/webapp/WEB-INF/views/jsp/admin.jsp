@@ -7,19 +7,22 @@
         <div class="container-fluid">
             <c:choose>
                 <c:when test="${adminPage eq 'tables'}">
-                    <jsp:include page="admin_tables.jsp" flush="true"/>
+                    <jsp:include page="admin_page_tables.jsp" flush="true"/>
                 </c:when>
                 <c:when test="${adminPage eq 'forms'}">
-                    <jsp:include page="admin_forms.jsp" flush="true"/>
+                    <jsp:include page="admin_page_forms.jsp" flush="true"/>
                 </c:when>
                 <c:when test="${adminPage eq 'elements'}">
-                    <jsp:include page="admin_elements.jsp" flush="true"/>
+                    <jsp:include page="admin_page_elements.jsp" flush="true"/>
                 </c:when>
                 <c:when test="${adminPage eq 'grid'}">
-                    <jsp:include page="admin_grid.jsp" flush="true"/>
+                    <jsp:include page="admin_page_grid.jsp" flush="true"/>
+                </c:when>
+                <c:when test="${adminPage eq 'modifyContent'}">
+                    <jsp:include page="admin_modif_content.jsp" flush="true"/>
                 </c:when>
                 <c:otherwise>
-                    <jsp:include page="admin_tables.jsp" flush="true"/>
+                    <jsp:include page="admin_page_tables.jsp" flush="true"/>
                 </c:otherwise>
             </c:choose>
         </div>

@@ -21,14 +21,22 @@ public class AdminController {
     @RequestMapping(method = RequestMethod.GET)
     public String get(Model model) {
         model.addAttribute(constant.CURRENT_PAGE, "admin");
+
         model.addAttribute("admins", repository.getListAdmin());
         model.addAttribute("titleAdmin", "Admin");
+
         model.addAttribute("contents", repository.getListContent());
         model.addAttribute("titleContent", "Content");
+
         model.addAttribute("sections", repository.getListSection());
         model.addAttribute("titleSection", "Section");
+
         model.addAttribute("contents_sections", repository.getListContentFromContentSection());
         model.addAttribute("titleContentSection", "ContentSection");
+
+        model.addAttribute("get_tables_name", repository.getTablesNames());
+        model.addAttribute("titleTablesName", "Tables for project");
+
         return constant.PAGE;
     }
 
@@ -61,12 +69,18 @@ public class AdminController {
         model.addAttribute("admins", repository.getListAdmin());
         model.addAttribute(constant.CURRENT_PAGE, "admin");
         model.addAttribute(constant.ADMIN_PAGE, "tables");
+
         model.addAttribute("contents", repository.getListContent());
         model.addAttribute("titleContent", "Content");
+
         model.addAttribute("sections", repository.getListSection());
         model.addAttribute("titleSection", "Section");
+
         model.addAttribute("contents_sections", repository.getListContentFromContentSection());
         model.addAttribute("titleContentSection", "ContentSection");
+
+        model.addAttribute("get_tables_name", repository.getTablesNames());
+        model.addAttribute("titleTablesName", "Tables for project");
         return constant.PAGE;
     }
 
@@ -76,4 +90,5 @@ public class AdminController {
         model.addAttribute("contents", repository.getListContent());
         return constant.PAGE;
     }
+
 }

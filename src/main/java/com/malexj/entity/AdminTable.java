@@ -1,14 +1,14 @@
 package com.malexj.entity;
 
 
-public class Admin extends AbstractEntity {
+public class AdminTable extends AbstractEntity {
     private String path;
     private String icon;
 
-    public Admin() {
+    public AdminTable() {
     }
 
-    public Admin(int id, String name, String path, String icon) {
+    public AdminTable(int id, String name, String path, String icon) {
         super(id, name);
         this.path = path;
         this.icon = icon;

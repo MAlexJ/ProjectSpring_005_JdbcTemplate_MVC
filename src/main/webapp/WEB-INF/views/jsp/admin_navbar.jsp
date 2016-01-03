@@ -23,7 +23,7 @@
         <ul class="nav navbar-nav side-nav">
             <c:forEach items="${admins}" var="item">
                 <li>
-                    <a href="${pageContext.request.contextPath}/admin/${item.path}"><i class="${item.icon}"></i> <c:out value="${item.name}"/></a>
+                    <a href="${pageContext.request.contextPath}/admin${item.path}"><i class="${item.icon}"></i> <c:out value="${item.name}"/></a>
                 </li>
             </c:forEach>
 
