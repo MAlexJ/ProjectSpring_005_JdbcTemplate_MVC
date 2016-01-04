@@ -26,7 +26,7 @@
         <module name="ProjectSpring_005_JdbcTemplate_MVC" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="ProjectSpring_005_JdbcTemplate_MVC" target="1.8" />
     </bytecodeTargetLevel>
   </component>
