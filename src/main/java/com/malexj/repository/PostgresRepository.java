@@ -19,4 +19,12 @@ public interface PostgresRepository {
     List<AdminTable> getListAdmin();
 
     List<String> getTablesNames();
+
+    void setContent(Content content);
+
+    void deleteContent(Content content);
+
+    void updateContent(Content content);
+
+    void clearContent();
 }

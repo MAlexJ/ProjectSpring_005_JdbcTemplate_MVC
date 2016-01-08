@@ -1,7 +1,6 @@
 package com.malexj.config;
 
 import com.malexj.repository.PostgresRepository;
-import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -24,21 +23,21 @@ public class RepositoryConfig {
 
     @Bean
     public DataSource dataSource() {
-        BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setDriverClassName(env.getRequiredProperty("db.driver"));
-        dataSource.setUrl(env.getRequiredProperty("db.url"));
-        dataSource.setUsername(env.getRequiredProperty("db.username"));
-        dataSource.setPassword(env.getRequiredProperty("db.password"));
-        dataSource.setRemoveAbandonedOnBorrow(Boolean.parseBoolean(env.getRequiredProperty("db.removeAbandoned")));
-        dataSource.setInitialSize(20);
-        dataSource.setMaxIdle(30);
-        return dataSource;
-//        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-//        dataSource.setDriverClassName("org.postgresql.Driver");
-//        dataSource.setUrl("jdbc:postgresql://localhost:5432/db_site");
-//        dataSource.setUsername("postgres");
-//        dataSource.setPassword("postgres");
+//        BasicDataSource dataSource = new BasicDataSource();
+//        dataSource.setDriverClassName(env.getRequiredProperty("db.driver"));
+//        dataSource.setUrl(env.getRequiredProperty("db.url"));
+//        dataSource.setUsername(env.getRequiredProperty("db.username"));
+//        dataSource.setPassword(env.getRequiredProperty("db.password"));
+//      //  dataSource.setRemoveAbandonedOnBorrow(Boolean.parseBoolean(env.getRequiredProperty("db.removeAbandoned")));
+//        dataSource.setInitialSize(Integer.parseInt(env.getRequiredProperty("db.initialSize")));
+//        dataSource.setMaxIdle(Integer.parseInt(env.getRequiredProperty("db.maxActive")));
 //        return dataSource;
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("org.postgresql.Driver");
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/db_site");
+        dataSource.setUsername("postgres");
+        dataSource.setPassword("2687484a");
+        return dataSource;
     }
 
     @Autowired

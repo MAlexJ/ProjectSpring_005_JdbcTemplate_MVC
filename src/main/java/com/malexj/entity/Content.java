@@ -14,6 +14,15 @@ public class Content extends AbstractEntity {
         super(id, name);
     }
 
+    public Content(int id) {
+        super(id);
+    }
+
+    public Content(String name, String path) {
+        super(name);
+        this.path = path;
+    }
+
     public Content(int id, String name, String path) {
         super(id, name);
         this.path = path;

@@ -48,6 +48,9 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 
+<!-- My Script JavaScript -->
+<script src="${pageContext.request.contextPath}/resources/js/myjs.js"></script>
+
 <!-- Morris Charts JavaScript -->
 <script src="${pageContext.request.contextPath}/resources/js/plugins/morris/raphael.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/plugins/morris/morris.min.js"></script>

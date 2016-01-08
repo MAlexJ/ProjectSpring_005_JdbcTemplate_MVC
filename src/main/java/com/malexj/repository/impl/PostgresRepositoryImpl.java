@@ -88,4 +88,24 @@ public class PostgresRepositoryImpl implements PostgresRepository {
             return rs.getString("table_name");
         });
     }
+
+    @Override
+    public void setContent(Content content) {
+        this.jdbcTemplate.update("INSERT INTO content (name, path) VALUES (?,?)", content.getName(), content.getPath());
+    }
+
+    @Override
+    public void deleteContent(Content content) {
+        this.jdbcTemplate.update("DELETE FROM content WHERE id=?", content.getId());
+    }
+
+    @Override
+    public void updateContent(Content content) {
+        this.jdbcTemplate.update("UPDATE content SET name=?, path=? WHERE id=?", content.getName(), content.getPath(), content.getId());
+    }
+
+    @Override
+    public void clearContent() {
+        this.jdbcTemplate.execute("TRUNCATE TABLE content RESTART IDENTITY CASCADE");
+    }
 }
